@@ -1,0 +1,153 @@
+/* Reset CSS toàn trang */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Định dạng chung cho trang web */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #f1f5f9;
+  color: #172033;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Thiết lập khung nội dung chính */
+.khung {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.khung {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+/* Định dạng phần đầu trang */
+header {
+  background: #0f172a;
+  color: #fff;
+  padding: 16px 0;
+}
+/* Bố trí logo và menu bằng Flexbox */
+.dau-trang {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+/* Định dạng logo và tên cửa hàng */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Thiết lập kích thước hình ảnh logo */
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+/* Bố trí các liên kết điều hướng bằng Flexbox */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+/* Định dạng tiêu đề chính */
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 12px;
+}
+/* Bố trí danh sách sản phẩm bằng CSS Grid */
+.luoi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 320px;
+  margin: 0 auto;
+}
+/* Định dạng các thẻ sản phẩm */
+.the {
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 300ms ease-out, border-color 300ms ease-out, box-shadow 300ms ease-out;
+}
+
+.the:hover {
+  transform: translateY(-5px);
+  border-color: red;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.the h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.the img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.the p {
+  margin-top: 10px;
+}
+/*Dưới 600px đã được thiết lập mặc định (mobile-first)*/
+/* Điều chỉnh giao diện cho màn hình từ 600px */
+@media (min-width: 600px) {
+  .dau-trang {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .luoi {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+  }
+}
+/* Điều chỉnh giao diện cho màn hình từ 1024px */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .luoi {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
+}
